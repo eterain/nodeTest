@@ -17,3 +17,15 @@ git checkout -b 브랜치이름	브랜치 생성 후 바로 이동	git checkout 
 git merge 브랜치이름	다른 브랜치의 작업을 현재 브랜치에 병합	git merge login-feature
 git branch -d 브랜치이름	브랜치 삭제	git branch -d login-feature
 git branch -D 브랜치이름	브랜치 강제 삭제	git branch -D login-feature
+
+브랜치 유형	설명
+feature	새로운 기능 개발
+bugfix	버그 수정
+hotfix	긴급 수정
+release	배포 준비
+
+예
+feature-login
+feature-payment
+bugfix-login-error
+hotfix-security
