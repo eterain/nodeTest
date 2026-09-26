@@ -1,25 +1,25 @@
 .DS_Store
+.env
+.env.local
+.gradle/
 
 node_modules/  # npm 패키지 디렉터리 제외
-npm-debug.log*
 venv/          # Python 가상 환경 제외
-
 logs/
-*.log
 tmp/
-*.tmp
 temp/
-*.temp
-
 dist/
 build/
+target/
+
+npm-debug.log*
+
+*.text
+# *.txt
+*.temp
+*.tmp
+*.log
 *.class
 *.jar
 *.war
 *.ear
-
-target/
-.gradle/
-
-.env
-.env.local
