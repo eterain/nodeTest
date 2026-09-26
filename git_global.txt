@@ -1,0 +1,85 @@
+
+https://github.com/eterain/nodeTest.git
+
+명령줄에서 새 저장소를 생성합니다.
+    echo "# nodeTest" >> README.md 
+    git init 
+    git add README.md 
+    git commit -m "first commit" 
+    git branch -M main 
+    git remote add origin https://github.com/eterain/nodeTest.git
+                   (별칭) (원격지주소)
+    git push -u origin main
+
+또는 명령줄에서 기존 저장소를 푸시할 수도 있습니다.
+    git remote add origin https://github.com/eterain/nodeTest.git
+                   (별칭) (원격지주소)
+    git branch -M main 
+    git push -u origin main
+
+매번 (정확히는 구현하고자 하시는 기능별로) branch를 만들고
+해당 branch에서 작업 및 테스트를 거친 뒤
+테스트까지 완료되었다면 해당 브랜치를 main으로 merge 시키는 방법을 택할 것 같습니다.
+
+main에 변경사항이 쌓여 있고 특정 branch (가령 branch1)을 main과 동일하게 만들기 위해서는
+branch1으로 체크아웃하신 뒤 (git checkout branch1)
+main을 merge하시면 됩니다.(git checkout main)
+그러면 branch1은 main과 동일한 상태가 됩니다.
+혹여 충돌이 나시면 해당 부분(같은 부분을 다르게 수정한 부분)만을 해결하시면 되구요,
+main과 동일한 상태가 된 branch1 을 깃허브로 push하고자 하신다면
+branch1을 push 하시면 됩니다 (git push origin branch1)
+
+일반적인 Git 작업 흐름은 다음과 같습니다.
+
+    원격 저장소
+        ↓
+    git clone
+        ↓
+    로컬 저장소
+        ↓
+    코드 수정
+        ↓
+    git add
+        ↓
+    git commit
+        ↓
+    git push
+        ↓
+    원격 저장소
+
+    내 컴퓨터에 있는 Git 저장소 : 로컬 저장소(Local Repository)
+    
+    서버에 위치한 Git 저장소 : 원격 저장소(Remote Repository) 
+
+    저장소 복제 (git clone)
+        원격 저장소의 프로젝트를 내 컴퓨터로 복사하는 방법
+        git clone 저장소주소
+        git clone https://github.com/eterain/nodeTest.git
+    원격 저장소 연결 (git remote)
+        로컬 저장소와 원격 저장소를 연결하는 방법
+        git remote add origin https://github.com/eterain/nodeTest.git
+                       (별칭) (원격지주소)
+        로컬에서 프로젝트를 만들고 Git 저장소를 생성한 경우에는 원격 저장소를 직접 연결해야 할경우.               
+    변경 내용 업로드 (git push)
+        내 컴퓨터에서 작업한 내용을 원격 저장소에 업로드하는 방법
+        git push -u origin main : 연결 후 업로드
+                    (별칭) (업로드할 브랜치)
+                 -u : 현재 브랜치와 원격 브랜치를 연결한다.
+            즉 origin 저장소의 main 브랜치로 로컬 Commit을 업로드한다는 의미입니다.             
+        git push origin main : : 업로드
+    최신 코드 가져오기 (git pull)
+        git pull origin main
+        git pull은 사실 두 가지 작업을 동시에 수행합니다.
+            1.git fetch	원격 저장소의 최신 정보를 가져옴
+            2.git merge	가져온 변경 내용을 현재 브랜치에 반영
+        즉 git pull은 최신 코드를 가져오고 자동으로 병합하는 명령어입니다.
+
+원격 저장소 관련 명령어
+명령어	    설명	                            예시
+git clone	원격 저장소를 로컬 저장소로 복제	git clone https://github.com/example/project.git
+git remote	연결된 원격 저장소 확인	            git remote
+git remote -v	원격 저장소 주소 확인	        git remote -v
+git remote add origin	원격 저장소 추가	    git remote add origin 저장소주소
+git push	로컬 Commit을 원격 저장소에 업로드	git push origin main
+git push -u origin main	원격 브랜치 연결 후 업로드	git push -u origin main
+git pull	원격 저장소의 최신 코드 가져오기	git pull origin main        

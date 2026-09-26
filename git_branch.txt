@@ -1,0 +1,19 @@
+git branch 브랜치 목록확인
+
+git branch 브랜치생성이름 ( 주의할 점은 브랜치를 생성해도 작업 브랜치는 변경되지 않습니다. )
+    git branch testBranch
+
+git checkout 브랜치이름 ( 브랜치 이동 )
+    git checkout testBranch
+
+git checkout -b testBranch ( 브랜치를 생성하면서 바로 이동할 수도 있습니다. )
+
+브랜치 관련 명령어
+명령어	설명	예시
+git branch	브랜치 목록 확인	git branch
+git branch 브랜치이름	새로운 브랜치 생성	git branch login-feature
+git checkout 브랜치이름	브랜치 이동	git checkout login-feature
+git checkout -b 브랜치이름	브랜치 생성 후 바로 이동	git checkout -b login-feature
+git merge 브랜치이름	다른 브랜치의 작업을 현재 브랜치에 병합	git merge login-feature
+git branch -d 브랜치이름	브랜치 삭제	git branch -d login-feature
+git branch -D 브랜치이름	브랜치 강제 삭제	git branch -D login-feature
